@@ -1,0 +1,53 @@
+body {
+  background-color: black;
+  color: #ffffff;
+  box-sizing: border-box;
+}
+.centerBox {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+      135deg,
+      rgba(13, 54, 5, 0.9) 0%,
+      rgba(0, 0, 0, 0.2) 70%
+    ),
+    url("https://i.pinimg.com/originals/99/8c/57/998c57b6ee813a5a1bbd921406d0b06b.jpg");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.centerBoxInside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.9;
+}
+.centerBoxInside:hover {
+  opacity: 1;
+}
+
+/* h1 {
+  color: green;
+} */
+
+.todo-done {
+  color: rgb(190, 140, 140);
+  text-decoration: line-through;
+}
+
+/* .todoContainer {
+  width: 60%;
+  margin: 2em 0;
+}
+#todoList {
+  width: 90%;
+  margin: 0 auto;
+}
+.centerInput {
+  width: 60%;
+  margin: 0 auto;
+} */

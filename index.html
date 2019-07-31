@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Todo App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="centerBox">
+      <div class="centerBoxInside">
+        <div class="container text-center mt-2">
+          <h1>
+            <i class="fa fa-list-alt"></i>_Your Todo List_<i
+              class="fa fa-list-alt"
+            ></i>
+          </h1>
+        </div>
+
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Your Todo"
+            id="inputTodo"
+            type="text"
+            onkeydown="keyDowndInInput()"
+          />
+          <div class="input-group-append">
+            <button class="btn btn-info" id="addClick" onclick="addTodo()">
+              ADD
+            </button>
+          </div>
+        </div>
+
+        <div class="row d-flex justify-content-center p-1">
+          <button
+            class="btn btn-success ml-2"
+            id="addClick"
+            onclick="allTodo()"
+          >
+            ALL
+          </button>
+          <button
+            class="btn btn-success ml-2"
+            id="addClick"
+            onclick="doneTodo()"
+          >
+            DONE
+          </button>
+          <button
+            class="btn btn-success ml-2"
+            id="addClick"
+            onclick="notDoneTodo()"
+          >
+            NOT DONE
+          </button>
+        </div>
+
+        <ul id="todoList" class="list-group"></ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
