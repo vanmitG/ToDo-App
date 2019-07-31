@@ -14,7 +14,7 @@ Here's a walkthrough of implemented user stories.
 
 <!-- This code was reviewed by @username and @otherusername.
 
-- [Link to PR #X](https://github.com/vanmitG/canvas_game_starter/pull/1) - reviewed by @username.
+- [Link to PR #X](https://github.com/vanmitG/) - reviewed by @username.
 - [Link to PR #Y](#) - reviewed by @otherusername. -->
 
 ## Required User Stories
@@ -23,7 +23,6 @@ Here's a walkthrough of implemented user stories.
 
 - [x] The user can add todo by enter text into input box and either click ADD or Enter key
 - [x] The Use can remove todo items
-- [x] The user can toggle between Done or Not Done on todo items
 - [x] The todo items is stored in local storage for future uses
 - [x] The user can filter todo items by Done, Not Done or All by click on appropriate button
 

@@ -1,14 +1,13 @@
 console.log("script.js");
 document.getElementById("inputTodo").focus();
-let todoList = localStorage.getItem("todoList");
-if (!todoList) {
-  todoList = [
-    { body: "task 1", done: false },
-    { body: "task 2", done: true },
-    { body: "task 3", done: true }
-  ];
-}
-
+//let todoList = localStorage.getItem("todoList");
+//if (!todoList) {
+todoList = [
+  { body: "task 1", done: false },
+  { body: "task 2", done: true },
+  { body: "task 3", done: true }
+];
+//}
 function createTodoObject() {
   let body = document.getElementById("inputTodo").value;
   console.log(`L 11- addTodo value: ${body}`);
@@ -27,6 +26,7 @@ function addTodo() {
   console.log(`todoList L-24: ${newTodo.body}`);
   renderTodoList(todoList);
   document.getElementById("inputTodo").focus();
+  // localStorage.setItem("todoList", );
 }
 
 function keyDowndInInput() {
@@ -61,7 +61,7 @@ function renderTodoList(filteredTodoList) {
     }" aria-hidden="true"></i></a><a class="btn btn-outline-danger" href="#" onclick=onDelete(${idx})><i class="fa fa-trash" aria-hidden="true"></i></a></span></li>`;
   });
   document.getElementById("todoList").innerHTML = todoHtml.join("");
-  localStorage.setItem("todoList", filteredTodoList);
+  // localStorage.setItem("todoList", );
   // console.log(`line tod oHtml ${todoHtml}:`);
 }
 
@@ -69,6 +69,7 @@ function onDelete(idx) {
   // console.log(`User Click Delete - line58 -idx=${idx}`);
   todoList.splice(idx, 1);
   renderTodoList(todoList);
+  // localStorage.setItem("todoList", );
 }
 
 function onToggle(idx) {
