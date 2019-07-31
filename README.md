@@ -22,7 +22,8 @@ Here's a walkthrough of implemented user stories.
 <!-- - [ ] I have at least three code reviews from others. -->
 
 - [x] The user can add todo by enter text into input box and either click ADD or Enter key
-- [x] The Use can remove todo items
+- [x] The User can remove todo items
+- [x] The User can toggle todo items from done to not done and vice versa.
 - [x] The todo items is stored in local storage for future uses
 - [x] The user can filter todo items by Done, Not Done or All by click on appropriate button
 

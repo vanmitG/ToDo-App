@@ -1,4 +1,4 @@
-console.log("script.js");
+// console.log("script.js");
 document.getElementById("inputTodo").focus();
 //let todoList = localStorage.getItem("todoList");
 //if (!todoList) {
@@ -8,6 +8,7 @@ todoList = [
   { body: "task 3", done: true }
 ];
 //}
+let todoStatus = "all";
 function createTodoObject() {
   let body = document.getElementById("inputTodo").value;
   console.log(`L 11- addTodo value: ${body}`);
@@ -26,7 +27,8 @@ function addTodo() {
   console.log(`todoList L-24: ${newTodo.body}`);
   renderTodoList(todoList);
   document.getElementById("inputTodo").focus();
-  // localStorage.setItem("todoList", );
+  localStorage.setItem("todoList", todoList);
+  checkTodoStatusandRenderList();
 }
 
 function keyDowndInInput() {
@@ -61,15 +63,24 @@ function renderTodoList(filteredTodoList) {
     }" aria-hidden="true"></i></a><a class="btn btn-outline-danger" href="#" onclick=onDelete(${idx})><i class="fa fa-trash" aria-hidden="true"></i></a></span></li>`;
   });
   document.getElementById("todoList").innerHTML = todoHtml.join("");
-  // localStorage.setItem("todoList", );
   // console.log(`line tod oHtml ${todoHtml}:`);
+}
+
+function checkTodoStatusandRenderList() {
+  if (todoStatus === "done") {
+    doneTodo();
+  } else if (todoStatus === "notDone") {
+    notDoneTodo();
+  } else {
+    allTodo();
+  }
 }
 
 function onDelete(idx) {
   // console.log(`User Click Delete - line58 -idx=${idx}`);
   todoList.splice(idx, 1);
-  renderTodoList(todoList);
-  // localStorage.setItem("todoList", );
+  localStorage.setItem("todoList", todoList);
+  checkTodoStatusandRenderList();
 }
 
 function onToggle(idx) {
@@ -78,7 +89,7 @@ function onToggle(idx) {
   console.log(
     `User Click To Toggle - line63 - idx=${idx} and new status is ${newStatus}`
   );
-  renderTodoList(todoList);
+  checkTodoStatusandRenderList();
 }
 function doneTodo() {
   const doneTodo = todoList.filter(todo => {
@@ -86,6 +97,7 @@ function doneTodo() {
   });
   console.log(`Line-81:User Click Done todo: ${doneTodo}`);
   renderTodoList(doneTodo);
+  todoStatus = "done";
 }
 function notDoneTodo() {
   const notDoneTodo = todoList.filter(todo => {
@@ -94,11 +106,13 @@ function notDoneTodo() {
   // });
   console.log(`Line-88:User Click Not Done todo: `);
   renderTodoList(notDoneTodo);
+  todoStatus = "notDone";
 }
 function allTodo() {
   console.log(`Line-88:User Click all  todo: `);
   renderTodoList(todoList);
+  todoStatus = "all";
 }
 
 renderTodoList(todoList);
-localStorage.setItem("todoList", todoList);
+// localStorage.setItem("todoList", todoList);
